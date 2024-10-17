@@ -44,6 +44,23 @@ def movies_from_year(movie_list,movie_year):
         if movie["year"] >= movie_year:
             print(movie["title"],"(",movie["year"],")","released was released after",int(movie_year)-1)
 
+# 5.3 A) 1/2
+def write_to_file(movie_list,file_name):
+    with open(file_name,"w") as file:
+        file.write("List:\n")
+        for movie in movie_list:
+            line = f"{movie["title"]} - {movie["year"]} has a rating of {movie["rating"]}\n"
+            file.write(line)
+
+# 5.3 B) 1/2
+def read_file(file_name):
+    try:
+        with open(file_name, 'r') as file:
+            the_list = file.read()
+            print(the_list)
+    except FileNotFoundError:
+        print(f"File {file_name} not found")
+
 #----------------------------------------------
 
 # 5.1 A) 2/2
@@ -75,7 +92,13 @@ print("\nThe average rating of all movies in",get_list_name(movies_2),"is",avera
 # 5.2 C) 2/2
 print("\n")
 movies_from_year(movies_1,"2010")
+print("\n")
 
+# 5.3 A) 2/2
+write_to_file(movies_1,"movies_1.txt")
+
+# 5.3 B) 2/2
+read_file("movies_1.txt")
 
 # Mulighet for å legge til filmer fra konsoll er kommentert ut, da oppgaven ikke spørr om dette
 # Brukt til feilsøking under
