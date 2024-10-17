@@ -75,7 +75,6 @@ print("\nThe average rating of all movies in",get_list_name(movies_2),"is",avera
 # 5.2 C) 2/2
 print("\n")
 movies_from_year(movies_1,"2010")
-print("\ndone")
 
 
 # Mulighet for å legge til filmer fra konsoll er kommentert ut, da oppgaven ikke spørr om dette
